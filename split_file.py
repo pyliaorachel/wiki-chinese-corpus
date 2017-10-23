@@ -4,9 +4,9 @@ import argparse
 
 # Parse args
 parser = argparse.ArgumentParser(description='Split file nto smaller chunks')
-parser.add_argument('input', metavar='FI', type=str, nargs=1, 
+parser.add_argument('input', metavar='FI', type=str,
                     help='file to be split')
-parser.add_argument('--output', '-o', metavar='FO', type=str, nargs=1,
+parser.add_argument('--output', '-o', metavar='FO', type=str,
                     help='output file name')
 parser.add_argument('--chunksize', metavar='S', type=float, default=50000,
                     help='small chunk size (KB)')
@@ -15,13 +15,13 @@ args = parser.parse_args()
 
 
 # Make new folder for split files
-dname, _ = os.path.splitext(args.output[0])
+dname, _ = os.path.splitext(args.output)
 if not os.path.exists(dname):
     os.makedirs(dname)
 
 # Split file
-finname = args.input[0]
-foutname = args.output[0]
+finname = args.input
+foutname = args.output
 chunk_size = args.chunksize * 1000
 read_size = 0
 i = 0
