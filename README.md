@@ -43,3 +43,10 @@ Clean Chinese corpus of Wikipedia dump.
     ```bash
     $ ./run.sh
     ```
+
+## Test
+
+```bash
+$ cd test
+$ ./test.sh
+```
